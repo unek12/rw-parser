@@ -4,9 +4,9 @@ const parser = async (html) => {
   const $ = await cheerio.load(html);
 
   const row = await $('.sch-table__body.js-sort-body')
-  const htmlArray = await row.find('.sch-table__row-wrap .sch-table__row').toArray()
+  const htmlArray = row.find('.sch-table__row-wrap .sch-table__row').toArray()
 
-  return await htmlArray.map(item => {
+  return htmlArray.map(item => {
     const trainNumber = $(item).find('.sch-table__route .train-number').text()
     const trainRoute = $(item).find('.sch-table__route .train-route').text()
     const trainFromName = $(item).find('.train-from-name').text()
@@ -36,7 +36,7 @@ const parser = async (html) => {
       trainDurationTime,
       tickets
     }
-  })
+  });
 }
 
 module.exports = parser;

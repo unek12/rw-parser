@@ -1,7 +1,7 @@
 // noinspection JSCheckFunctionSignatures
 
-const {connect} = require("mongoose");
-const { PASS } = require('./constants')
+const { connect } = require("mongoose");
+const { PASS } = require('../constants')
 
 const options = {
   useNewUrlParser: true,
@@ -9,7 +9,8 @@ const options = {
   connectTimeoutMS: 10000,
 };
 
-const url = `mongodb+srv://horbach:${PASS}@cluster0.ds5eo.mongodb.net/best-sale?retryWrites=true&w=majority`;
+// const url = `mongodb+srv://horbach:${PASS}@cluster0.ds5eo.mongodb.net/best-sale?retryWrites=true&w=majority`;
+const url = `mongodb://localhost:27017/RWParser`;
 
 const database = async () => {
   return connect(url, options)

@@ -1,6 +1,6 @@
-const UserModel = require('../models/Users');
-const { getRWParams } = require('../request');
-const { setCustomButtons } = require('../utils');
+const UserModel = require('../../database/models/Users');
+const { getRWParams } = require('../utils/request');
+const { setCustomButtons } = require('../utils/utils');
 
 const getRouteFromStep = async (bot, user, chatId, text) => {
 

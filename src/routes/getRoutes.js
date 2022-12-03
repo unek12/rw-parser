@@ -1,8 +1,8 @@
-const {setCustomButtons} = require("../utils");
+const {setCustomButtons} = require("../utils/utils");
 
-const UserModel = require('../models/Users');
-const {getRWRoute} = require('../request');
-const {EDIT_ROUTE, EDIT_ROUTE_WITH, EDIT_ROUTE_WITH_EDIT, SELECT_ROUTE} = require('../constants');
+const UserModel = require('../../database/models/Users');
+const {getRWRoute} = require('../utils/request');
+const {EDIT_ROUTE, EDIT_ROUTE_WITH, EDIT_ROUTE_WITH_EDIT, SELECT_ROUTE} = require('../../constants');
 
 const checkRouteOptions = (title, value, keyboard) => {
     if (keyboard) {

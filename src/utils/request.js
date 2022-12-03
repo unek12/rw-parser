@@ -1,5 +1,5 @@
 const axios = require('axios');
-const parser = require('./parser');
+const parser = require('../parser/parser');
 
 const getRWParams = async (from) => {
   return axios.get('https://pass.rw.by/ru/ajax/autocomplete/search/', {

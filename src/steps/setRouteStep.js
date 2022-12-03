@@ -1,4 +1,4 @@
-const UserModel = require('../models/Users');
+const UserModel = require('../../database/models/Users');
 
 const setRouteStep = async (bot, user, chatId) => {
   const { message_id } = await bot.sendMessage(chatId, 'Введите станцию отправления')

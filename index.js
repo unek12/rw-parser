@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const database = require("./database");
-const bootstrapService = require("./bootstrapService");
+const database = require("./database/database");
+const bootstrapService = require("./src/bootstrapService");
 
-const PORT = process.env.PORT || 8082;
+const PORT = process.env.PORT || 8080;
 
 // Headers
 app.use(function (req, res, next) {
@@ -29,7 +30,7 @@ async function start() {
     await database();
 
     await app.listen(PORT, async () => {
-      console.log(`running Scrapper server on port ${PORT}`);
+      console.log(`running Scrapper server on port ${ PORT }`);
       bootstrapService();
     });
   } catch (e) {

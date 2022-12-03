@@ -1,5 +1,5 @@
-const UserModel = require('../models/Users');
-const { SET_ROUTE, MY_LAST_ROUTE } = require('../constants');
+const UserModel = require('../../database/models/Users');
+const { SET_ROUTE, USER_LAST_ROUTE } = require('../../constants');
 
 const reply_markup = JSON.stringify({
     inline_keyboard: [
@@ -10,7 +10,7 @@ const reply_markup = JSON.stringify({
 const replay_markup_full = {
   inline_keyboard: [
     [{text: 'Выбрать маршрут', callback_data: SET_ROUTE}],
-    [{text: 'Сохраненный маршрут', callback_data: MY_LAST_ROUTE}],
+    [{text: 'Сохраненный маршрут', callback_data: USER_LAST_ROUTE}],
   ]
 }
 
